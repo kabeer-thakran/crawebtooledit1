@@ -1,0 +1,36 @@
+[project]
+name = "cra-web-tool"
+version = "0.1.0"
+description = "Arup Climate Risk Assessment (CRA) web tool — R&A Skill Network pilot."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "streamlit>=1.36",
+    "pydantic>=2.7",
+    "openpyxl>=3.1",
+    "python-docx>=1.1",
+    "docxtpl>=0.17",
+    "folium>=0.16",
+    "streamlit-folium>=0.21",
+    "plotly>=5.22",
+    "pandas>=2.2",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.5",
+    "mypy>=1.10",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.mypy]
+python_version = "3.11"
+warn_unused_ignores = true
+ignore_missing_imports = true
+plugins = ["pydantic.mypy"]

@@ -1,0 +1,83 @@
+{
+  "project": {
+    "project_name": "Sample Mixed-Use Tower",
+    "client": "Acme Developments Pvt Ltd",
+    "report_date": "2026-05-28",
+    "job_number": "ARUP-2026-00123",
+    "document_version": "0.1",
+    "address": "Connaught Place",
+    "city": "Delhi",
+    "country": "India",
+    "location": { "lat": 28.6139, "lng": 77.209 },
+    "asset_type": "Building",
+    "project_scope": "Design and construction of a 25-storey mixed-use tower.",
+    "taxonomy_sector": "Construction & real estate",
+    "taxonomy_activity": "7.1 Construction of new buildings",
+    "contribution_mode": "DNSH",
+    "lifespan_years": 60,
+    "baseline_period": { "start": 1995, "end": 2014 },
+    "reference_period": { "start": 2015, "end": 2024 },
+    "mid_century_period": { "start": 2041, "end": 2060 },
+    "end_century_period": { "start": 2081, "end": 2100 },
+    "scenario_a": "SSP2-4.5",
+    "scenario_b": "SSP5-8.5"
+  },
+  "phase0": {
+    "introduction_text": "This Climate Risk Assessment has been prepared by Arup for the Sample Mixed-Use Tower in Delhi.",
+    "methodology_text": "A semi-quantitative two-phase methodology is applied per the EU Taxonomy DNSH criteria.",
+    "scope_text": "The assessment covers the asset and its immediate site context over a 60-year lifespan.",
+    "receptors": [
+      { "id": "structural", "name": "Structural", "description": "Primary structure.", "components": "Foundations, columns, beams, slabs, cores" },
+      { "id": "non_structural", "name": "Non-structural", "description": "Secondary elements.", "components": "Facade cladding, partitions, ceilings, roofing" },
+      { "id": "building_services", "name": "Building services", "description": "MEP systems.", "components": "HVAC, electrical, plumbing, fire, ICT" },
+      { "id": "internal_assets", "name": "Internal assets", "description": "Contents and equipment.", "components": "Furniture, equipment, stock, data" },
+      { "id": "site_context", "name": "Site context", "description": "External site and access.", "components": "Landscaping, access roads, drainage, utilities" }
+    ]
+  },
+  "screening": [
+    { "hazard_id": "heat_wave", "at_site": "Yes", "comments": "Frequent severe summer heat waves.", "source": "IMD records" },
+    { "hazard_id": "flood_pluvial", "at_site": "Yes", "comments": "Surface flooding during monsoon.", "source": "Municipal drainage study" },
+    { "hazard_id": "drought", "at_site": "Yes", "comments": "Seasonal water stress.", "source": "CGWB" },
+    { "hazard_id": "wildfire", "at_site": "No", "comments": "Urban site, low vegetation.", "source": "Site survey" }
+  ],
+  "materiality": [
+    { "hazard_id": "heat_wave", "receptor_id": "building_services", "significant": "Yes", "comment": "Cooling load and plant capacity.", "source": "MEP review" },
+    { "hazard_id": "heat_wave", "receptor_id": "internal_assets", "significant": "Yes", "comment": "Thermal comfort risk.", "source": "Design team" },
+    { "hazard_id": "flood_pluvial", "receptor_id": "structural", "significant": "Yes", "comment": "Basement inundation risk.", "source": "Geotech" },
+    { "hazard_id": "flood_pluvial", "receptor_id": "building_services", "significant": "Yes", "comment": "Ground-floor plant flooding.", "source": "MEP review" }
+  ],
+  "final_selection": [
+    { "hazard_id": "heat_wave", "material": true, "comments": "Material — present at site and significant impact." },
+    { "hazard_id": "flood_pluvial", "material": true, "comments": "Material — present at site and significant impact." }
+  ],
+  "hazard_assessments": [
+    { "hazard_id": "heat_wave", "scenario": "SSP2-4.5", "horizon": "Baseline", "likelihood": 3, "threshold_value": "40", "threshold_unit": "°C", "source": "IMD" },
+    { "hazard_id": "heat_wave", "scenario": "SSP2-4.5", "horizon": "Mid-century", "likelihood": 4, "threshold_value": "42", "threshold_unit": "°C", "source": "CMIP6" },
+    { "hazard_id": "heat_wave", "scenario": "SSP2-4.5", "horizon": "End-century", "likelihood": 4, "threshold_value": "43", "threshold_unit": "°C", "source": "CMIP6" },
+    { "hazard_id": "heat_wave", "scenario": "SSP5-8.5", "horizon": "Baseline", "likelihood": 3, "threshold_value": "40", "threshold_unit": "°C", "source": "IMD" },
+    { "hazard_id": "heat_wave", "scenario": "SSP5-8.5", "horizon": "Mid-century", "likelihood": 5, "threshold_value": "44", "threshold_unit": "°C", "source": "CMIP6" },
+    { "hazard_id": "heat_wave", "scenario": "SSP5-8.5", "horizon": "End-century", "likelihood": 5, "threshold_value": "46", "threshold_unit": "°C", "source": "CMIP6" },
+    { "hazard_id": "flood_pluvial", "scenario": "SSP2-4.5", "horizon": "Baseline", "likelihood": 2, "threshold_value": "50", "threshold_unit": "mm/day", "source": "IMD" },
+    { "hazard_id": "flood_pluvial", "scenario": "SSP2-4.5", "horizon": "Mid-century", "likelihood": 3, "threshold_value": "60", "threshold_unit": "mm/day", "source": "CMIP6" },
+    { "hazard_id": "flood_pluvial", "scenario": "SSP2-4.5", "horizon": "End-century", "likelihood": 3, "threshold_value": "65", "threshold_unit": "mm/day", "source": "CMIP6" },
+    { "hazard_id": "flood_pluvial", "scenario": "SSP5-8.5", "horizon": "Baseline", "likelihood": 2, "threshold_value": "50", "threshold_unit": "mm/day", "source": "IMD" },
+    { "hazard_id": "flood_pluvial", "scenario": "SSP5-8.5", "horizon": "Mid-century", "likelihood": 4, "threshold_value": "70", "threshold_unit": "mm/day", "source": "CMIP6" },
+    { "hazard_id": "flood_pluvial", "scenario": "SSP5-8.5", "horizon": "End-century", "likelihood": 4, "threshold_value": "75", "threshold_unit": "mm/day", "source": "CMIP6" }
+  ],
+  "vulnerability": [
+    { "hazard_id": "heat_wave", "receptor_id": "structural", "direct": 2, "operational": 2, "health_safety": 2, "justification": "Limited direct structural sensitivity." },
+    { "hazard_id": "heat_wave", "receptor_id": "building_services", "direct": 4, "operational": 5, "health_safety": 3, "justification": "Cooling plant capacity critical." },
+    { "hazard_id": "heat_wave", "receptor_id": "internal_assets", "direct": 3, "operational": 3, "health_safety": 4, "justification": "Occupant thermal comfort and safety." },
+    { "hazard_id": "heat_wave", "receptor_id": "non_structural", "direct": 2, "operational": 2, "health_safety": 2, "justification": "Material expansion considerations." },
+    { "hazard_id": "heat_wave", "receptor_id": "site_context", "direct": 2, "operational": 2, "health_safety": 3, "justification": "External public realm heat." },
+    { "hazard_id": "flood_pluvial", "receptor_id": "structural", "direct": 4, "operational": 3, "health_safety": 3, "justification": "Basement and foundation inundation." },
+    { "hazard_id": "flood_pluvial", "receptor_id": "building_services", "direct": 5, "operational": 5, "health_safety": 4, "justification": "Ground-floor plant highly exposed." },
+    { "hazard_id": "flood_pluvial", "receptor_id": "internal_assets", "direct": 3, "operational": 3, "health_safety": 2, "justification": "Lower-floor contents." },
+    { "hazard_id": "flood_pluvial", "receptor_id": "non_structural", "direct": 3, "operational": 2, "health_safety": 2, "justification": "Finishes water damage." },
+    { "hazard_id": "flood_pluvial", "receptor_id": "site_context", "direct": 4, "operational": 3, "health_safety": 3, "justification": "Access and drainage exposure." }
+  ],
+  "adaptation": [
+    { "hazard_id": "heat_wave", "description": "Increase chiller redundancy and oversize cooling plant.", "physical": true, "priority": "High", "timeframe_years": 2, "indicative_cost": "Medium", "notes": "Coordinate with MEP." },
+    { "hazard_id": "flood_pluvial", "description": "Raise ground-floor plant and add flood barriers at entrances.", "physical": true, "priority": "High", "timeframe_years": 1, "indicative_cost": "Medium", "notes": "Integrate with SUDS strategy." }
+  ]
+}
